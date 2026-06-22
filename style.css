@@ -11,17 +11,18 @@ body {
     align-items: center;
 
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #0d1117;
 }
 
 .container {
-    background: white;
+    background-color: #161b22;
+    color: #f0f6fc;
     padding: 2rem;
     border-radius: 12px;
     text-align: center;
     width: 500px;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
@@ -40,15 +41,40 @@ button {
     padding: 12px 24px;
     border: none;
     border-radius: 8px;
+    color: white;
 
     font-size: 1rem;
     cursor: pointer;
 
-    transition: transform 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+#rock {
+    background-color: #da3633;
+}
+
+#paper {
+    background-color: #1f6feb;
+}
+
+#scissors {
+    background-color: #238636;
 }
 
 button:hover {
     transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+button:disabled:hover {
+    transform: none;
+    box-shadow: none;
 }
 
 #results,
@@ -68,4 +94,39 @@ button:hover {
 #winner {
     font-size: 1.5rem;
     margin-top: 1.5rem;
+}
+
+.winner {
+    color: #3fb950;
+    font-weight: bold;
+}
+
+.loser {
+    color: #f85149;
+    font-weight: bold;
+}
+
+#reset {
+    display: none;
+    margin-top: 30px;
+
+    padding: 14px 28px;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    background-color: #f39c12;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#reset:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
