@@ -46,11 +46,39 @@ function playRound(humanChoice, computerChoice) {
 
     if (humanScore === 5) {
         winnerDiv.textContent = "🏆 You win the game!";
+        winnerDiv.className = "winner";
+        resetBtn.style.display = "inline-block";
+
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
     }
 
     else if (computerScore === 5) {
         winnerDiv.textContent = "💀 Computer wins the game!";
+        winnerDiv.className = "loser";
+        resetBtn.style.display = "inline-block";
+
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
     }
+}
+
+function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
+
+    resultsDiv.textContent = "";
+    scoreDiv.textContent = `Human: 0 | Computer: 0`;
+    winnerDiv.textContent = "";
+    winnerDiv.className = "";
+
+    resetBtn.style.display = "none";
+
+    rockBtn.disabled = false;
+    paperBtn.disabled = false;
+    scissorsBtn.disabled = false;
 }
 
 const rockBtn = document.querySelector("#rock");
@@ -60,6 +88,7 @@ const scissorsBtn = document.querySelector("#scissors");
 const resultsDiv = document.querySelector("#results");
 const scoreDiv = document.querySelector("#score");
 const winnerDiv = document.querySelector("#winner");
+const resetBtn = document.querySelector("#reset");
 
 scoreDiv.textContent = `Human: ${humanScore} | Computer: ${computerScore}`;
 
@@ -74,5 +103,7 @@ paperBtn.addEventListener("click", () => {
 scissorsBtn.addEventListener("click", () => {
     playRound("scissors", getComputerChoice());
 });
+
+resetBtn.addEventListener("click", resetGame);
 
 
