@@ -3,7 +3,7 @@ A simple browser-based Rock Paper Scissors game built using HTML, CSS (optional)
 
 
 🚀 How to Run
-Download or clone the project
+* Download or clone the project
 Open the folder
 Open index.html in any modern browser
 Play the game via the prompt dialog
